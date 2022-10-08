@@ -1,0 +1,125 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+	// satuan variabel
+	float waktuAwal, waktuAkhir, waktuKeluar;
+
+	// ===============
+	// judul program 1
+	// ===============
+	cout<<"======== Program Menentukan Lamanya Pegawai Bekerja ========";
+	cout<<endl;
+
+	// input nya
+	cout<<"Masukkan Jam Masuk : ";
+	cin>>waktuAwal;
+	cout<<"Masukkan Jam Keluar : ";
+	cin>>waktuAkhir;	
+
+	// output
+	cout<<"Lama Bekerja "<<waktuKeluar;
+	
+	// prcabangan nya
+	if(waktuAkhir >= waktuAwal){
+		waktuKeluar = waktuAkhir - waktuAwal;
+	}else{
+		waktuKeluar = (12-waktuAwal) + waktuAkhir;
+	}
+	
+	// lannjutan outputnya
+	cout<<waktuKeluar<<" Jam."<<endl;
+	cout<<endl;
+
+
+
+	// ===============
+	// judul program 2
+	// ===============
+	cout<<"======== Program Diskon Jenis Barang ========"<<endl;
+	
+	// variabel program 2
+	int kode;
+	float diskon1, diskon2, diskon3, harga;
+	char jenis;
+	
+	// input
+	cout<<"Kode : ";
+	cin>>kode;
+q:	cout<<"Jenis (A/B/C): ";
+	cin>>jenis;
+	cout<<"Harga : ";
+	cin>>harga;
+	
+	// output serta percabangan
+	
+	// jika user memilih A/a maka mendapatkan diskon sebesar 10%
+	if(jenis == 'A'){
+		diskon1 = harga - (0.10*harga);
+		cout<<"Jenis barang A mendapatkan diskon = 10%, Harga setelah didiskonkan = ";
+		cout<<diskon1<<endl;
+	}
+	// jika user memilih B/b maka mendapatkan diskon sebesar 15%
+	else if(jenis == 'B'){
+		diskon2 = harga - (0.15*harga);
+		cout<<"Jenis barang B mendapatkan diskon = 15%, Harga setelah didiskonkan = ";
+		cout<<diskon2<<endl;
+	}
+	// jika user memilih C/c maka mendapatkan diskon sebesar 20%
+	else if(jenis == 'C'){
+		diskon3 = harga - (0.20*harga);
+		cout<<"Jenis barang C mendapatkan diskon = 20%, Harga setelah didiskonkan = ";
+		cout<<diskon3<<endl;
+	}
+	// jika user salah memasukan kata maka mengulang ke dalam input jenis barang serta harus mengisi ulang nominal
+	else{
+		cout<<"ERROR! masukan A, B, Dan C"<<endl;
+		goto q;
+	}
+	
+	
+	
+	// ===============	
+	// Judul Program 3
+	// ===============
+	cout<<endl;
+	cout<<"======== Program Lamanya Berparkir ========"<<endl;
+	
+	// satuan variabel
+	float jamMasuk, jamKeluar;
+	int lama, hasilBiaya;
+	
+	// input
+	cout<<"Jam Masuk : ";
+	cin>>jamMasuk;
+	cout<<"Jam Keluar : ";
+	cin>>jamKeluar;
+	
+	//kalkulasi lama berparkirnya
+	lama = jamKeluar - jamMasuk;
+	
+	// output
+	cout<<"Jam Masuk "<<jamMasuk<<" Jam Keluar "<<jamKeluar<<" ";
+	cout<<"Lama Berparkir "<<lama<<" Jam ";
+	
+	// jika lama parkirnya melebihi 2 jam maka seterusnya bertambah Rp 500
+	if(lama>2){
+		hasilBiaya = 2000 + ((lama - 2)*500);
+	}else{
+		// JIka Lama Berparkirnya Hanya 2 jam Saja
+		hasilBiaya = 2000;
+	}
+	
+	// output jumlah biaya dari parkir
+	cout<<"Keluaran Biaya Parkir Rp "<<hasilBiaya<<endl;
+	
+		
+	cout<<endl;
+	cout<<endl;
+	
+	cout<<"Program By Syahrul Fitra Aghfari X RPl Industri"<<endl;
+	cout<<"Salam Paung"<<endl;
+	return 0;
+}
